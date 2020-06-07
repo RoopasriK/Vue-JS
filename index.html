@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Slam book</title>
+        <!--Link pages-->
+        <link href="styles.css" rel="stylesheet"/>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <h1>My Slam Book</h1>
+        <!--Connecting to Vue Instance-->
+        <div id="vue-app" class="add-item-form">
+            <!--Data-->
+            <p>{{message}} Scattered yet always moving together</p>
+            <!--Key Modifiers-->
+            <input type = "text" v-on:keyup.enter = "showinputvalue" placeholder = "Enter your nickname" />
+            <h3>Welcome {{name.toLocaleUpperCase()}}</h3>
+            <!--Data Binding-->
+            <a v-bind:href="website">Here's a small tip about friendship</a>
+            <p>I have {{num}} friends.</p>
+            <!--Methods-->
+            <button class="btn btn-primary" @click="add(1)">Add a friend</button>
+            <button class="btn btn-primary" v-on:dblclick="add(10)">Double click add more</button>
+            <!--Computed Properties-->
+            <p>First Name  <input type = "text" v-model = "firstName" /> </p>
+            <p>Last Name  <input type = "text" v-model = "lastName"/> </p>
+            <h3>{{getFullName}} Nice to meet you:)</h3>
+            <!--Dynamic CSS-->
+            <h3>To-Do Friends List</h3>
+            <!--Conditionals-->
+            <div v-if="state === 'edit'">
+                <input v-model="newItem" type="text" placeholder="Add to-do item" @keyup.enter="saveItem">
+                <button class="btn btn-primary"  @click="saveItem">Save Item</button>
+            </div>
+            <!--Looping-->
+            <ul>
+                <li v-for="item in reversedItems" :class="{strikeout: item.done}" @click="toggleDone(item)">{{ item.label }}</li>
+            </ul>
+            <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Add To-Do Item</button>
+            <button v-else class="btn btn-cancel" @click="changeState('default')">Cancel Adding Item</button><br><br>
+            <!--Refs-->
+            <input type="text" ref="input" placeholder = "Any comments" />
+            <button class="btn btn-primary" v-on:click="readRefs">Submit</button>
+            <p>{{output}}</p>
+            <!--Event Modifiers-->
+            <p v-html="websiteTag" v-on:click.prevent="click"></p>
+            <div v-bind:title="instruct">Hover to see your login time</div>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>

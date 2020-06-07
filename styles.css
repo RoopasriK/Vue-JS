@@ -1,0 +1,107 @@
+body{
+    background-image: url('slambook_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1, h3 {
+    color: #3D4852;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li, p {
+    display: flex;
+    align-items: center;
+    line-height: 1.75;
+    letter-spacing: .5px;
+    color: #3D4852;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+a {
+    color: rgb(16, 37, 16);
+    font-size: 1.25rem;
+    transition: all .1s ease-in;
+    margin-top: .5rem;
+    display: block;
+}
+
+a:hover {
+    color: rgb(122, 46, 141);
+}
+
+li:hover {
+    color: #22292F;
+}
+
+li input {
+    margin: 0 .5rem 0;
+}
+
+.btn {
+    border: none;
+    border-radius: 3px;
+    margin: auto 0;
+    padding: .5rem .75rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    font-size: .9rem;
+    letter-spacing: .5px;
+    transition: all .1s ease-in;
+}
+
+.btn[disabled] {
+    background: #8795A1;
+}
+
+.btn[disabled]:hover {
+    background: #606F7B;
+}
+
+.btn-primary {
+    background: #3D4852;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: rgb(38, 42, 46);
+}
+
+.btn-cancel {
+    background: #EF5753;
+    color: #fff;
+}
+
+.btn-cancel:hover {
+    background: #E3342F;
+    color: #fff;
+}
+
+.strikeout {
+    text-decoration: line-through;
+    color: rgb(75, 79, 83);
+}
+
+.strikeout:hover {
+    color: #8795A1;
+}
+
+.add-item-form input {
+    width: 15%;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    border: 1px solid #F1F5F8;
+    color: #606F7B;
+    padding: .5rem .75rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    letter-spacing: .5px;
+    margin: .5rem 0;
+}
